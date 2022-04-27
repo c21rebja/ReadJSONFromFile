@@ -1,7 +1,5 @@
 package com.example.readjsonfromfile;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -13,10 +11,14 @@ import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final String TAG = "===";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        String mountainText = readFile("mountains.json");
     }
 
     @SuppressWarnings("SameParameterValue")
@@ -25,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
             //noinspection CharsetObjectCanBeUsed
             return new Scanner(getApplicationContext().getAssets().open(fileName), Charset.forName("UTF-8").name()).useDelimiter("\\A").next();
         } catch (IOException e) {
-            Log.e("===", "Could not read file: " + fileName);
+            Log.e(TAG, "Could not read file: " + fileName);
             return null;
         }
     }
+
 
 }
