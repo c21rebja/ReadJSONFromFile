@@ -32,12 +32,11 @@ public class MainActivity extends AppCompatActivity {
 
         if(listOfMountains != null) {
             Log.d(TAG, "Number of elements: " + listOfMountains.size());
+            Log.d(TAG, "Element 0: " + listOfMountains.get(0).toString());
         }
         else {
             Log.d(TAG, "There were no elements to show.");
         }
-        Log.d(TAG, "Element 0: " + listOfMountains.get(0).toString());
-
     }
 
     @SuppressWarnings("SameParameterValue")
