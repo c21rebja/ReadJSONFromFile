@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         String mountainText = readFile("mountains.json");
+        Log.d(TAG, mountainText);
     }
 
     @SuppressWarnings("SameParameterValue")
